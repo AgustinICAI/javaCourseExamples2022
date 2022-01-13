@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2021/master/images/logo.png" width="100"> javaCourseExamples
+# <img src="https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/images/logo.png" width="100"> javaCourseExamples
 
 ### Repositorio de la asignatura Programación Orientada a Objetos de 2º de GITT - Grupo B en la Escuela Técnica Superior de Ingeniería de ICAI (Universidad Pontificia Comillas)
 En este repositorio encontrarás:
