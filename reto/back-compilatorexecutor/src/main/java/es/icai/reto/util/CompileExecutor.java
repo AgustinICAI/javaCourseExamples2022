@@ -17,19 +17,6 @@ import java.time.Instant;
 import java.util.stream.Collectors;
 
 public class CompileExecutor {
-    private static String readCode(String sourcePath) throws FileNotFoundException {
-        InputStream stream = new FileInputStream(sourcePath);
-        String separator = System.getProperty("line.separator");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-        return reader.lines().collect(Collectors.joining(separator));
-    }
-
-    private static Path saveSource(String source, String className) throws IOException {
-        String tmpProperty = System.getProperty("java.io.tmpdir");
-        Path sourcePath = Paths.get(tmpProperty, className + ".java");
-        Files.write(sourcePath, source.getBytes());
-        return Paths.get(tmpProperty);
-    }
 
     private static String[] compileSource(Path javaPath, String className) {
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
@@ -108,10 +95,7 @@ public class CompileExecutor {
 
 
     public static void main(String... args) throws Exception {
-        String source = readCode("AppTest.java");
-        Path javaPath = saveSource(source, "AppTest");
-        System.out.println(compileAndExecute(javaPath, "AppTest", "test"));
-
+        System.out.println(compileAndExecute(Paths.get("."), "AppTest", "test"));
 
     }
 }
