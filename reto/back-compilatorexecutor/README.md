@@ -7,7 +7,7 @@ $ mvn function:run
 ## to invoke it
 ### locally
 ```
-curl -i -F className=AppTest -F method=test -F upload=@"/home/b0904853/AppTest.java" http://localhost:8080/
+curl -i -F className=AppTest -F method=test -F upload=@"./AppTest.java" http://localhost:8080/
 ```
 ### remote
 ```
