@@ -23,6 +23,10 @@ class ConcursanteSoltero extends Concursante {
     else
       return "villa montaña";
   }
+  
+  public String toString(){
+    return super.toString() + " , ES SOLTERO";
+  }
 
 
 }

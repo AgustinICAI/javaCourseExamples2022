@@ -18,6 +18,14 @@ class Concursante{
   public int getSexo(){
     return this.sexo;
   }
+  
+  public String toString(){
+    return "nombre: " + nombre + ", sexo: " + sexo + ", edad: " + edad; 
+  }
+  
+  public String getNombre(){
+    return this.nombre;
+  }
  
 
 }

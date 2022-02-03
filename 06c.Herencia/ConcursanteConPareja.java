@@ -35,6 +35,10 @@ class ConcursanteConPareja extends Concursante {
     else
       return "villa montaña";
   }
+  
+  public String toString(){
+    return super.toString() + " , PAREJA: " + pareja.getNombre();
+  }
 
 
 
