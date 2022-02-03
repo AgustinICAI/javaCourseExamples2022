@@ -1,28 +1,24 @@
 class Concursante{
-  private String sexo;
+  private int sexo;
   private String nombre;
   private int edad;
-  private boolean soltero;
   private int edicionConcurso;
   
-  Concursante(String sexo, String nombre, int edad, boolean soltero)
+  static int MASCULINO = 0;
+  static int FEMENINO = 1;
+  
+  
+  Concursante(int sexo, String nombre, int edad)
   {
     this.sexo = sexo;
     this.nombre = nombre;
-
     this.edad = edad;
-    this.soltero = soltero;
   }
   
-  String getVilla()
-  {
-    if (sexo.equals("masculino") && soltero == true)
-      return "villa playa";
-    else
-      return "villa montaña";
-    
+  public int getSexo(){
+    return this.sexo;
   }
-
+ 
 
 }
 
