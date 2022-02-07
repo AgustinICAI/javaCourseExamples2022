@@ -19,4 +19,13 @@ Se investigará en la API del JDK la forma de pintar rectángulos y círculos co
 ![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/06p2.dibujoHerencia/output2.png)
 
 
+```java
+//Para pintar el triángulo habrá que investigar
+//https://docs.oracle.com/en/java/javase/16/docs/api/java.desktop/java/awt/Graphics.html#drawPolygon(java.awt.Polygon)
+public void drawPolygon​(Polygon p)
 
+//https://docs.oracle.com/en/java/javase/16/docs/api/java.desktop/java/awt/Polygon.html
+Polygon​(int[] xpoints, int[] ypoints, int npoints)
+
+
+```
