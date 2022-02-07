@@ -13,7 +13,7 @@ Se investigará en la API del JDK la forma de pintar rectángulos y círculos co
 
 ##### Salida del programa
 
-* AppDibujo01: Crear dos círculos rellenos, un cuadrado relleno y otro sin relleno.
+* AppDibujo01: Crear 1 círculo relleno, un cuadrado relleno, otro cuadrado sin relleno y un tríangulo relleno.
 ![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/06p2.dibujoHerencia/output1.png)
 * AppDibujo02: Crear 10 triángulos que se vayan pintando con un intervalo de 1 segundo desplazándose en forma diagonal (de arriba a la izquierda hacia abajo a la derecha).
 ![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/06p2.dibujoHerencia/output2.png)
