@@ -22,7 +22,8 @@ public class Concurso{
     int i = 0;
     while(i < concursantes.length)
     {
-      if(concursantes[i].getNombre().equals(c.getNombre()))
+      //if(concursantes[i].getNombre().equals(c.getNombre())) ESTO ESTO SE HACIA CUANDO TODAVÍA NO HABÍAMOS EXPLICADO EL EQUALS
+      if(concursantes[i].equals(c))
         return i;
       
       i += 1;

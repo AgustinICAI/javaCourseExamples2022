@@ -30,11 +30,25 @@ abstract class Concursante implements Despedible{
   public String getNombre(){
     return this.nombre;
   }
+  public int getEdad(){
+    return this.edad;
+  }
   
   public abstract String getVilla();
  
   public String calcularUltimoDia(int diasContrato){
     return "Día Siguiente"; 
+  }
+  
+  public boolean equals(Object o){
+    if(!(o instanceof Concursante))
+      return false;
+    Concursante c = (Concursante)o;
+    if (this.getNombre().equals(c.getNombre()) && this.edad == c.getEdad())
+      return true;
+    else
+      return false;
+    
   }
 
 }
