@@ -1,0 +1,16 @@
+islaDeLasTentaciones.domain
+islaDeLasTentaciones.ui
+
+COMPILACIÓN
+~/src>
+javac ./islaDeLasTentaciones/domain/*.java ./islaDeLasTentaciones/ui/*.java -d "../dist"
+
+
+EJECUCION
+-> Situarse en la ruta donde está nuestra app en dist
+java islaDeLasTentaciones.ui.AppConcurso
+
+
+
+
+
