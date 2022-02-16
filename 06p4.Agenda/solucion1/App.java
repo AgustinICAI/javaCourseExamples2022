@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 public class App
 {
-    private static Agenda agenda = new Agenda("AGENDA");
 
+    
+    
     public static void main(String[] args)
     {
+        private static Agenda agenda = new Agenda("AGENDA");
         int opcion=0;
         do
         {
@@ -84,7 +86,7 @@ public class App
         	    break;
             case ELIMINAR_PERSONA:
         	    System.out.println("*** ELIMINAR PERSONA ***");        	    
-                pos = App.mostrarPersonasElegirPosicion();
+                pos = App.mostrarPersonasElegirPosicionPorNIF();
                 agenda.remove(pos);
 
         	    System.out.print("Objeto borrado");
@@ -93,7 +95,7 @@ public class App
         	    break;
             case MODIFICAR_PERSONA:
         	    System.out.println("*** MODIFICAR PERSONA ***");        	    
-                pos = App.mostrarPersonasElegirPosicion();
+                pos = App.mostrarPersonasElegirPosicionPorNIF();
                 Persona p = agenda.get(pos);
                 if(p!=null)
                 {
@@ -135,5 +137,13 @@ public class App
         int pos = Integer.parseInt(Leer.porTeclado());
         return pos;
     }    
-
+    private static int mostrarPersonasElegirPosicionPorNIF()
+    {
+        System.out.println("NIF de la persona a modificar: ");
+        System.out.print(agenda);
+        System.out.print("  > ");
+        String nif = Leer.porTeclado();
+        return agenda.indexOf(new Persona(nif));
+        
+    }   
 }

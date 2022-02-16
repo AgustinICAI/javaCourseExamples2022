@@ -6,6 +6,8 @@ public enum OpcionAgenda {
     VACIAR_AGENDA("5. Vaciar agenda"),
     MOSTRAR_CONTENIDO("6. Mostrar lista"),SALIR("7. Salir");
 
+
+
     private final String descripcion;
 
     OpcionAgenda(String descripcion){

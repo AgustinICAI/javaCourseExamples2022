@@ -82,7 +82,7 @@ public class Agenda
     	{
     		personas[posicion] = null;
     		for(int i=posicion;i<size-1;i++)
-            	personas[i] = personas[i+1];
+           	personas[i] = personas[i+1];
             personas[--size] = null;
             return true;
 	    }
