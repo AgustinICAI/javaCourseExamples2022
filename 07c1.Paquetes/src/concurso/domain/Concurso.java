@@ -1,4 +1,4 @@
-package domain;
+package concurso.domain;
 
 public class Concurso{ 
   private Concursante[] concursantes = new Concursante[30];

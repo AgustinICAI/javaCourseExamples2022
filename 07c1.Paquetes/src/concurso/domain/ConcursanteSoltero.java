@@ -1,10 +1,10 @@
-package domain;
+package concurso.domain;
 
-class ConcursanteSoltero extends Concursante {
+public class ConcursanteSoltero extends Concursante {
   private Concursante[] relacionesConcurso;
   private int numRelaciones;
   
-  ConcursanteSoltero(Sexo sexo, String nombre, int edad)
+  public ConcursanteSoltero(Sexo sexo, String nombre, int edad)
   {
     super(sexo, nombre, edad);
     relacionesConcurso = new ConcursanteConPareja[10];

@@ -1,8 +1,8 @@
-package ui;
-import domain.*;
+package concurso.ui;
+import concurso.domain.*;
 
 
-public class App
+class App
 {
   static int i; 
   static String s2;

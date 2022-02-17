@@ -1,6 +1,6 @@
-package domain;
+package concurso.domain;
 
-abstract class Concursante implements Despedible{
+public abstract class Concursante implements Despedible{
   private Sexo sexo;
   private String nombre;
   private int edad;
@@ -9,7 +9,7 @@ abstract class Concursante implements Despedible{
 //  static int MASCULINO = 0;
 //  static int FEMENINO = 1;
   
-  enum Sexo{
+  public enum Sexo{
     MASCULINO, FEMENINO;
   }
   

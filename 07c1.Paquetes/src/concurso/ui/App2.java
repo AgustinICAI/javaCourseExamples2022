@@ -1,7 +1,7 @@
-package ui;
-import domain.*;
+package concurso.ui;
+import concurso.domain.*;
 
-public class App2{
+class App2{
   public static void main(String argv[]){
     Concurso concurso = new Concurso(); 
     

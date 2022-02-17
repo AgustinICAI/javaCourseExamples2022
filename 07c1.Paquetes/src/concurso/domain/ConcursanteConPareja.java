@@ -1,18 +1,18 @@
-package domain;
+package concurso.domain;
 
-class ConcursanteConPareja extends Concursante {
+public class ConcursanteConPareja extends Concursante {
   
   private ConcursanteConPareja pareja;
   private int mesesRelacion;
   private boolean infidelidadPrevia;
   
-  ConcursanteConPareja(Concursante.Sexo sexo, String nombre, int edad, int mesesRelacion, boolean infidelidadPrevia){
+  public ConcursanteConPareja(Concursante.Sexo sexo, String nombre, int edad, int mesesRelacion, boolean infidelidadPrevia){
     super(sexo, nombre, edad);
     this.mesesRelacion = mesesRelacion;
     this.infidelidadPrevia = infidelidadPrevia; 
   }
   
-  ConcursanteConPareja(Sexo sexo, String nombre, int edad, boolean infidelidadPrevia, ConcursanteConPareja pareja){
+  public ConcursanteConPareja(Sexo sexo, String nombre, int edad, boolean infidelidadPrevia, ConcursanteConPareja pareja){
     this(sexo, nombre, edad, pareja.getMesesRelacion(), infidelidadPrevia);
     this.setPareja(pareja);
   }  
