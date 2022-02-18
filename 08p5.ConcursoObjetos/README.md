@@ -1,6 +1,6 @@
 En esta práctica, se simulará el concurso sobre el que se ha trabajado en las últimas clases. En la edición inventada por el alumno, entrarán 5 parejas, 5 solteros y 5 solteras con nombres fictios.
 
-Recordando la lógica del concurso, algunas parejas están consolidadas de años, otras son de pocos meses, por lo que hay que almacenar el día que comenzaron la relación las parejas. Otro parámetro a poder calcular, es el factor estabilidad de la pareja, la cual se calculará en base al número de días que llevan juntos multiplicado por la edad media de ambos y un factor que dependerá del tipo de relación: Conocidos de forma natural fuera del programa (10), Conocidos de forma natural en otro concurso (5) o Sin conocerse relación previa pero se han unido para el concurso (3).
+Recordando la lógica del concurso, algunas parejas están consolidadas de años, otras son de pocos meses, por lo que hay que almacenar el día que comenzaron la relación las parejas. Otro parámetro a poder calcular, es el factor estabilidad de la pareja, la cual se calculará en base al número de días que llevan juntos multiplicado por la edad media de ambos, y un factor que dependerá del tipo de relación: Conocidos de forma natural fuera del programa (1), Conocidos de forma natural en otro concurso (5) o Sin conocerse relación previa pero se han unido para el concurso (3), y si ha habido infidelidad previa, esto se multiplará por 5.
 
 Es necesario simular la lógica del concurso durante 30 días.
 
@@ -18,7 +18,7 @@ Adicionalmente a lo anterior, se pide:
 
 
 Especificaciones técnicas:
-- Es recomendable usar la clase Calendar vista en clase.
+- Es recomendable usar la clase LocalDateTime, aunque también se puede usar la clase Calendar vista en clase. Para obtener diferencia de dias, se puede realizar mediante la clase Duration. *De cara al examen no hay que conocer estas clases, pero lo que si hay que saber es mirar la documentación JAVADOC*
 - Hay que trabajar utilizando *enums* donde sea necesario.
 - Crear expresamente un método ConcursanteSoltero getConcursanteRamdom() que devuelva un ConcursanteSoltero que se utilizado en las hogueras.
 - Crear expresamente un método Pareja[] getParejasRotas() que vuelva un array de parejas rotas por cada día.
