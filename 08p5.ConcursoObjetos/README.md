@@ -9,6 +9,7 @@ Cada vez que se celebre una hoguera (una vez a la semana), 2 solteros (1 chico y
 Por cada día que pase también hay posibilidades de que las parejas se rompan por culpa de algún soltero, y por tanto también abandonarían el concurso. Para ello, cada soltero/a tiene un factor tentador que se comporta de forma normal de -10000 a 10000 (revisar también la clase ramdom y el comportamiento gaussiano). Si el soltero/a al tentar, si su factor tentador aleatorio  supera el factor del la pareja que está tentando, esa pareja será expulsada ese día.
 
 Es necesario pasados 30 días, mostrar las parejas quedan finalmente en el concurso. El concurso empezará el 18 de febrero de 2022 y finalizará pasados 30 días.
+También es necesario mostrar por pantalla todas las relaciones que ha habido que han hecho que se tuvieran que ir las parejas.
 
 Adicionalmente a lo anterior, se pide:
 - Realizar el diagrama de clases.

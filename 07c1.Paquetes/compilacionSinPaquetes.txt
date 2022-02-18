@@ -1,0 +1,14 @@
+C:\temp>
+
+cd ..\Mis Documentos
+cd C:\Mis Documentos\src
+
+C:\Mis Documentos\src>
+
+javac *.java -d "..\dist"
+javac *.java -d "C:\Mis Documentos\dist"
+
+cd ..\dist
+cd C:\Mis Documentos\dist
+
+java App.java
