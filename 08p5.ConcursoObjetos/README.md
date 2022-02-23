@@ -4,7 +4,7 @@ Recordando la lógica del concurso, algunas parejas están consolidadas de años
 
 Es necesario simular la lógica del concurso durante 30 días.
 
-Cada vez que se celebre una hoguera (una vez a la semana), 2 solteros (1 chico y 1 chica) serán expulsados. Para simular la expulsión será necesario usar la clase Ramdom (https://docs.oracle.com/javase/8/docs/api/java/util/Random.html).
+Cada vez que se celebre una hoguera (una vez a la semana,los lunes), 2 solteros (1 chico y 1 chica) serán expulsados. Para simular la expulsión será necesario usar la clase Ramdom (https://docs.oracle.com/javase/8/docs/api/java/util/Random.html).
 
 Por cada día que pase también hay posibilidades de que las parejas se rompan por culpa de algún soltero/a, y por tanto también abandonarían el concurso. Para ello, cada soltero/a tiene un factor tentador que se comporta de forma normal, sienda la media 20000 puntos y la desviación típica 15000  (revisar también la clase ramdom y el comportamiento gaussiano). Si el soltero/a al tentar, si su factor tentador aleatorio  supera el factor del la pareja que está tentando, esa pareja será expulsada ese día. El soltero/a cada día sólo puede tentar a una pareja. Si un soltero/a un día obtiene un factor tentador muy elevado, rompe sólo a la primera pareja que se encuentra, pero no todas.
 
