@@ -1,14 +1,14 @@
 public class GetObjetoTest extends Test{
-  public GetObjetoTest(TipoLista tipoLista, size){
+  public GetObjetoTest(TipoLista tipoLista,int size){
     super(tipoLista,size);
     
     for(int i=0;i<size;i++)
-      lista.add(String.valueOf(i));
+      getLista().add(String.valueOf(i));
     
   }
   
   public void run(int posicion){
-     lista.get(posicion);
+     getLista().get(posicion);
 
   }
 

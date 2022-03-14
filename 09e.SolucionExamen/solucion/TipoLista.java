@@ -4,6 +4,7 @@ public enum TipoLista{
 
 
 //OTRA FORMA
+/*
 public enum TipoLista{
   ARRAYLIST(new ArrayList<>()),LINKEDLIST(new LinkedList<>());
   
@@ -17,4 +18,4 @@ public enum TipoLista{
     return lista;
   }
   
-}
+}*/
