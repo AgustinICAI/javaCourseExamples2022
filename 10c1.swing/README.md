@@ -5,10 +5,10 @@
 - Muchos componentes AWT son redefinidos por los nuevos Swing. (Button -> JButton)
 - Pero otros elementos AWT todavía existen y conviven con los de Swing.
 
-![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/main/10c1.swing/componentesBasicosSwing.png)
+![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/10c1.swing/componentesBasicosSwing.png)
 
 - Principales clases
-![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/main/10c1.swing/clasesPrincipalesGraficas.png)
+![alt text](https://raw.githubusercontent.com/AgustinICAI/javaCourseExamples2022/master/10c1.swing/clasesPrincipalesGraficas.png)
 
 # Componentes de toda aplicación GUI
 1. Contenedores (Containers): Elementos que se emplean para colocar componentes en la ventana. La forma en la que se
