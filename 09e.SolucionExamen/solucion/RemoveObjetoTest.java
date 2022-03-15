@@ -1,14 +1,14 @@
 public class RemoveObjetoTest extends Test{
-  public RemoveObjetoTest(TipoLista tipoLista, size){
+  public RemoveObjetoTest(TipoLista tipoLista,int size){
     super(tipoLista,size);
     
     for(int i=0;i<size;i++)
-      lista.add(String.valueOf(i));
+      getLista().add(String.valueOf(i));
     
   }
   
   public void run(int posicion){
-     lista.remove(posicion);
+     getLista().remove(posicion);
 
   }
 

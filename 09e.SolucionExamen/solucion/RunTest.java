@@ -1,14 +1,14 @@
 public class RunTest{
   private int iteraciones;
   
-  public RunTest(Test test, int iteraciones){
+  public RunTest(Test test, int iteraciones, int size){
   
     this.iteraciones = iteraciones;
     
     
     long inicioNano = System.nanoTime();
     for(int i=0;i<iteraciones;i++){
-      test.run(Util.getRandom(SIZE));
+      test.run(Util.getRandom(size));
     }
     long finNano = System.nanoTime();  
     long nanoTiempo = finNano - inicioNano;
