@@ -14,6 +14,5 @@ public class AppDibujo01
 
 		dibujo.ocultar("Grupo Rojo");
 
-
 	}
 }
