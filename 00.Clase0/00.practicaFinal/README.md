@@ -1,12 +1,10 @@
-## PENDIENTE ACTUALIZAR AL 2021
-
 ## Práctica Final. Programación Orientada a Objetos. 
 ### Desarrollo de un software pseudo-comercial con interfaz gráfica 
 El alumno podrá elegir entre desarrollar una aplicación Swing que gestione un tipo cualquiera de objeto (A) o desarrollar un JPaint. Ambas aplicaciones tendrán persitencia en disco. 
 
 #### Fecha de entrega:
 
-<span style="color:red;font-weight:bold">Fecha del último examen que tengáis - *29 de mayo*</span>
+<span style="color:red;font-weight:bold">Fecha del último examen que tengáis -  ~*15 de mayo*</span>
 
 
 #### Entregable:
@@ -28,8 +26,8 @@ La aplicación a desarrollar debe cumplir con los siguientes requisitos funciona
 
 - Altas/Bajas/Modificaciones de objetos.
 - Generación de listados en función de dos criterios de filtrado introducidos por el usuario. (P.e: mostrar todas las personas, sólo las que vivan en XXXX o las que vivan XXXX y estén casadas)
-- Exportación de la información del programa a un fichero TXT gracias a la API suministrada por el profesor.
-Es obligatorio emplear nuevos componentes gráficos (JTable, JComboBox, JTabbedPane, etc.) que se facilitan en la documentación de la asignatura.
+- Importación/Exportación de la información del programa a un fichero TXT, XML, JSON o YAML
+Es obligatorio emplear nuevos componentes gráficos (JTable, JComboBox, JTabbedPane, etc.) o otras librerías o funcionalidades no vistas en clase.
 
 ##### Evaluación de la práctica: Todos los alumnos parten de un 9.0. Nota mínima: 0. Nota máxima: 10.5.
 
