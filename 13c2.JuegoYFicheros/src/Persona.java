@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.Random;
 
 public class Persona extends Sprite {
     String nombre;
@@ -11,11 +12,11 @@ public class Persona extends Sprite {
         this.apellido = apellido;
         this.peliculaFavorita = peliculaFavorita;
         this.edad = edad;
-        y = Math.random()*Juego.HEIGHT;
-        x = Juego.WIDTH;
-        velocidad = 30;
+        Random r = new Random();
+        y = r.nextInt(PanelJuego.ALTURA-100) + 40;//para que sea disparable +-100 y no salgan muy pegados a los extremos
+        x = PanelJuego.ANCHURA;
+        velocidad = 100;
     }
-
 
     public static Persona fromCSV(String linea){
         String [] campos = linea.split(",");
@@ -43,9 +44,12 @@ public class Persona extends Sprite {
         return cad;
     }
 
+    int anchoPersona;
+    int altoPersona = 20;
     public void paint(Graphics g) {
         g.setColor(Color.PINK);
-        g.setFont(new Font("Courier",Font.BOLD,20));
+        g.setFont(new Font("Courier",Font.BOLD,altoPersona));
+        anchoPersona = g.getFontMetrics().stringWidth(this.nombre);
         g.drawString(this.nombre,(int)x,(int)y);
 
     }
@@ -53,5 +57,10 @@ public class Persona extends Sprite {
 
     public void actualizarPosicion() {
         this.x -= velocidad /PanelJuego.FPS;
+    }
+
+    @Override
+    public Rectangle getCollisionArea() {
+        return new Rectangle((int) x, (int) y-altoPersona, anchoPersona, altoPersona);
     }
 }

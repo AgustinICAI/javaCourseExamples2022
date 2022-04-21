@@ -4,25 +4,31 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.Calendar;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class PanelJuego extends JPanel implements Runnable {
-    private Character character;
+    private Personaje character;
     private Juego juego;
     private boolean cargando = true;
     public static int FPS = 60;
+    public static int ANCHURA = 960;
+    public static int ALTURA = 540;
 
 
     Image imagenFondo;
-    private Collection<Persona> personas;
+    private ArrayList<Persona> personas;
     private boolean juegoCorriendo = true;
+    private boolean ganado=false;
+    private boolean perdido=false;
 
     public PanelJuego(Juego juego) {
         this.juego = juego;
+        this.setPreferredSize(new Dimension(ANCHURA,ALTURA));
         try {
             imagenFondo = ImageIO.read(new File("resources/bg_space_seamless_1.png"));
-            character = new Character();
+            character = new Personaje();
         } catch (IOException e) {
             //e.printStackTrace();
             throw new RuntimeException(e);
@@ -38,21 +44,27 @@ public class PanelJuego extends JPanel implements Runnable {
             g.setFont(new Font("Courier",Font.BOLD,30));
             g.setColor(Color.YELLOW);
             g.drawString("CARGANDO...",200,200);
-        }else {
+        }else if(ganado){
+            g.setFont(new Font("Courier",Font.BOLD,30));
+            g.setColor(Color.YELLOW);
+            g.drawString("HAS GANADO!!",200,200);
+        }else if(perdido){
+            g.setFont(new Font("Courier",Font.BOLD,30));
+            g.setColor(Color.YELLOW);
+            g.drawString("HAS PERDIDO LOOSER!!",200,200);
+        }
+        else {
             if (personas != null)
                 personas.forEach(p -> p.paint(g));
             character.paint(g);
-
         }
-
-
 
         g.dispose();
         Toolkit.getDefaultToolkit().sync();
     }
 
 
-    public void cargarPersonas(Collection<Persona> personas) {
+    public void cargarPersonas(ArrayList<Persona> personas) {
         this.personas = personas;
         this.cargando = false;
     }
@@ -64,27 +76,30 @@ public class PanelJuego extends JPanel implements Runnable {
     @Override
     public void run() {
 
-        double refreshInterval = (double)1000000000/FPS;
-        double nextRefresh = System.nanoTime() + refreshInterval;
-        double countFPS = 0;
-        long lastSecond = System.nanoTime()/1000000000;
-        while(juegoCorriendo){
+        double refreshRate = (double) 1000000000 / FPS;
+        double nextPaint = System.nanoTime() + refreshRate;
+
+        int countFpsPainted = 0;
+        int secCounter = (int) (System.nanoTime()/1000000000);
+
+        while(juegoCorriendo) {
             recalcularElementos();
             repaint();
-            double remainingTime = nextRefresh - System.nanoTime();
-            if(remainingTime < 0)
+            double remainingTime = nextPaint - System.nanoTime();
+            if(remainingTime<0)
                 remainingTime = 0;
+
             try {
-                Thread.sleep((long) 30);
+                Thread.sleep((long) remainingTime/1000000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            countFPS +=1;
-            if(lastSecond!=System.nanoTime()/1000000000){
-                System.out.println(Calendar.getInstance().getTime() + "-" + countFPS);
-                lastSecond = System.nanoTime()/1000000000;
-
-
+            nextPaint += refreshRate;
+            countFpsPainted+=1;
+            if((int) (System.nanoTime()/1000000000) != secCounter){
+                System.out.println("FPS:" + countFpsPainted);
+                countFpsPainted = 0;
+                secCounter = (int) (System.nanoTime()/1000000000);
             }
 
         }
@@ -95,15 +110,22 @@ public class PanelJuego extends JPanel implements Runnable {
         if(personas!=null){
             personas.forEach(p-> p.actualizarPosicion());
         }
+        
+        character.actualizarPosicion(juego.getTeclasPulsadas());
+        character.checkCollions(personas);
 
-        if(juego.getTeclasPulsadas().contains(KeyEvent.VK_UP)){
-            character.moveUp();
-        }else if(juego.getTeclasPulsadas().contains(KeyEvent.VK_DOWN)){
-            character.moveDown();
-        }
-        System.out.println(juego.getTeclasPulsadas());
-        juego.getTeclasPulsadas().clear();
+        if(personas!=null && personas.isEmpty())
+            ganar();
+        else if (personas!= null && personas.get(0).x < 95)
+            perder();
+    }
 
-
+    private void ganar() {
+        this.juegoCorriendo=false;
+        this.ganado = true;
+    }
+    private void perder() {
+        this.juegoCorriendo=false;
+        this.perdido = true;
     }
 }

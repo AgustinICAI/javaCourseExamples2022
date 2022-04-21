@@ -15,8 +15,7 @@ public class Juego extends JFrame /*implements Runnable*/ {
         new Juego();
 
     }
-    public static int WIDTH = 960;
-    public static int HEIGHT = 560;
+
 
     PanelJuego panelJuego;
 
@@ -41,7 +40,7 @@ public class Juego extends JFrame /*implements Runnable*/ {
 
         Thread threadJuego = new Thread(()-> {
             Collection<Persona> personas = Juego.lecturaFichero();
-            panelJuego.cargarPersonas(personas);
+            panelJuego.cargarPersonas(new ArrayList<>(personas));
         } );
         threadJuego.start();
 
@@ -50,13 +49,12 @@ public class Juego extends JFrame /*implements Runnable*/ {
             @Override
             public void keyPressed(KeyEvent e) {
                 teclasPulsadas.add(e.getKeyCode());
-                System.out.println(e.getKeyCode());
             }
+            @Override
+            public void keyReleased(KeyEvent e){
+                teclasPulsadas.remove(e.getKeyCode());
+            };
         });
-        this.requestFocus();
-
-        //new Thread(this).start();
-
 
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -66,7 +64,8 @@ public class Juego extends JFrame /*implements Runnable*/ {
                 System.exit(0);
             }
         });
-        this.setSize(Juego.WIDTH,Juego.HEIGHT);
+        this.pack();
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -79,41 +78,20 @@ public class Juego extends JFrame /*implements Runnable*/ {
         }
         Collection<Persona> personas = new ArrayList<>();
         try {
-            /*
-            File f = new File("Alumnos.csv");
-            FileReader fr = new FileReader(f);
-            BufferedReader br1 = new BufferedReader(fr);
-            */
 
             BufferedReader br = new BufferedReader(new FileReader(new File("Alumnos.csv")));
-            /*
-            String linea = br.readLine();
-            while (linea != null){
-                Persona p = Persona.fromCSV(linea);
-                personas.add(p);
-                linea = br.readLine();
-            }*/
             String linea;
             while((linea = br.readLine())!=null){
                 personas.add(Persona.fromCSV(linea));
             }
-
-
             System.out.println(personas);
 
             br.close();
-        }/*
-        catch (FileNotFoundException e){
-            e.printStackTrace();
-        } */catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
         }
         return personas;
     }
 
-    /*
-    @Override
-    public void run() {
 
-    }*/
 }
