@@ -1,0 +1,9 @@
+Main-Class: es.icai.poo.clasejar.app.App2
+
+
+
+
+
+
+
+
