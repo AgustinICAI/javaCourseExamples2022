@@ -62,7 +62,7 @@ public class AppVentana extends JFrame {
             }
         });
 
-        Timer timer = new Timer(30, new ActionListener() {
+        Timer timer = new Timer(60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 personaje.caer();

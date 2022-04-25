@@ -22,6 +22,8 @@ public class MyPanel extends JPanel {
         super.paintComponent(g);
         g.drawImage(personaje.getImage(),personaje.getX(),personaje.getY(),null);
         g.drawRect(personaje.getX(),personaje.getY(),personaje.getImage().getWidth(null),personaje.getImage().getHeight(null));
+        Toolkit.getDefaultToolkit().sync();
+        g.dispose();
     }
 
 }
