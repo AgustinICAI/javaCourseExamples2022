@@ -1,9 +1,0 @@
-!!User
-admin: false
-email: paco@gmail.com
-name: PACO
-preferences:
-- {size: pequeño, zoom: '1'}
-- {size: mediano, zoom: '2'}
-- {size: grande, zoom: '3'}
-roles: [jefe, superJefe]

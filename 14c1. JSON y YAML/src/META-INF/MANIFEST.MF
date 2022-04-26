@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: gson-2.9.0.jar snakeyaml-1.30.jar
+
